@@ -1,0 +1,31 @@
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+    margin: auto;
+    align-items: center;
+}
+
+.game-restart {
+    max-width: 150px;
+    border: 1px solid #1c5959;
+    color: #1c5959;
+    background: none;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #ccc;
+
+    &:hover {
+        border: 1px solid #328888;
+        color: white;
+        background: #328888;
+    }
+
+    &:active {
+        border: 1px solid #1c5959;
+        color: white;
+        background: #1c5959;
+    }
+}
