@@ -14,6 +14,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+<img width="623" alt="2023-05-15_01-04-31" src="https://github.com/laarniastrid/react-tic-tac-toe/assets/11416752/c5349db8-b80c-456e-af1b-bb118e058db6">
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
