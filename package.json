@@ -27,11 +27,6 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "./src/setupTests.js"
-    ]
-  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^13.5.0",
