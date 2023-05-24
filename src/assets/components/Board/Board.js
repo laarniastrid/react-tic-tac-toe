@@ -64,23 +64,22 @@ function Board({ xIsNext, squares, onPlay, currentMove }) {
         <>
             <div className="status">{status}</div>
             <div className="board">
-                <div className="board-row">
-                    <Square value={squares[0]} onSquareClick={() => handleClick(0)} isWinner={isWinningSquare(squares, 0)} />
-                    <Square value={squares[1]} onSquareClick={() => handleClick(1)} isWinner={isWinningSquare(squares, 1)} />
-                    <Square value={squares[2]} onSquareClick={() => handleClick(2)} isWinner={isWinningSquare(squares, 2)} />
-                </div>
-                <div className="board-row">
-                    <Square value={squares[3]} onSquareClick={() => handleClick(3)} isWinner={isWinningSquare(squares, 3)} />
-                    <Square value={squares[4]} onSquareClick={() => handleClick(4)} isWinner={isWinningSquare(squares, 4)} />
-                    <Square value={squares[5]} onSquareClick={() => handleClick(5)} isWinner={isWinningSquare(squares, 5)} />
-                </div>
-                <div className="board-row">
-                    <Square value={squares[6]} onSquareClick={() => handleClick(6)} isWinner={isWinningSquare(squares, 6)} />
-                    <Square value={squares[7]} onSquareClick={() => handleClick(7)} isWinner={isWinningSquare(squares, 7)} />
-                    <Square value={squares[8]} onSquareClick={() => handleClick(8)} isWinner={isWinningSquare(squares, 8)} />
-                </div>
+                {Array(3).fill(null).map((_, row) => (
+                    <div className="board-row" key={row}>
+                        {Array(3).fill(null).map((_, col) => {
+                            const squareIndex = row * 3 + col;
+                            return (
+                                <Square
+                                    key={squareIndex}
+                                    value={squares[squareIndex]}
+                                    onSquareClick={() => handleClick(squareIndex)}
+                                    isWinner={isWinningSquare(squares, squareIndex)}
+                                />
+                            );
+                        })}
+                    </div>
+                ))}
             </div>
-
             <div className="board-info">
                 {info}
             </div>
