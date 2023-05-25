@@ -19,8 +19,8 @@ jobs:
       
       - name: GitHub Action for Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
-          with:
-            repoToken: '${{ secrets.GITHUB_TOKEN }}'
-            firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TIC_TAC_TOE_5A3AB }}'
-            channelId: live
-            projectId: react-tic-tac-toe-5a3ab
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TIC_TAC_TOE_5A3AB }}'
+          channelId: live
+          projectId: react-tic-tac-toe-5a3ab
