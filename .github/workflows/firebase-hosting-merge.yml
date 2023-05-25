@@ -11,10 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: actions/setup-node@v1
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TIC_TAC_TOE_5A3AB }}'
-          channelId: live
-          projectId: react-tic-tac-toe-5a3ab
+          node-version: '16'
+      - run: npm ci
+      - run: npm run build
+      
+      - name: GitHub Action for Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+          with:
+            repoToken: '${{ secrets.GITHUB_TOKEN }}'
+            firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TIC_TAC_TOE_5A3AB }}'
+            channelId: live
+            projectId: react-tic-tac-toe-5a3ab
