@@ -7,8 +7,8 @@ on:
 
 jobs:
   build-and-deploy:
-    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
-    
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+
     runs-on: ubuntu-latest
 
     steps:
@@ -27,9 +27,8 @@ jobs:
         run: npm run build
 
       - name: Firebase Deploy
-        run: npx firebase deploy --token "${{ secrets.FIREBASE_TOKEN }}"
         uses: FirebaseExtended/action-hosting-deploy@v0
-          with:
-            repoToken: '${{ secrets.GITHUB_TOKEN }}'
-            firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TIC_TAC_TOE_5A3AB }}'
-            projectId: react-tic-tac-toe-5a3ab
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_TIC_TAC_TOE_5A3AB }}
+          projectId: react-tic-tac-toe-5a3ab
