@@ -28,7 +28,6 @@
     ]
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^13.5.0",
     "jest-dom": "^4.0.0",
     "node-sass": "^7.0.3",
@@ -38,9 +37,9 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.22.0",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
     "jest": "^27.5.1",
     "nyc": "^15.1.0"
   }
